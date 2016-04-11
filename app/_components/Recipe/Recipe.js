@@ -46,12 +46,12 @@ export default class Recipe extends React.Component {
         <h1>{this.state.data.name}</h1>
         <h4>Opis przygotowania</h4>
         <p>
-        {this.state.data.desc}
+          {this.state.data.desc}
         </p>
         <hr/>
         <h4>Składniki</h4>
         <ul>
-        {this.state.ingredients}
+          {this.state.ingredients}
         </ul>
       </div>
     )

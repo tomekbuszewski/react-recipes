@@ -34,7 +34,7 @@ export default class RecipeList extends React.Component {
     for(let item in list) {
       links.push(
         <li key={list[item].id}>
-          <Link to={"/przepisy/" + list[item].id + "/" + list[item].slug}>{list[item].name}</Link>
+          <Link to={'/przepisy/' + list[item].id + '/' + list[item].slug}>{list[item].name}</Link>
         </li>
       );
     }

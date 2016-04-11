@@ -6,26 +6,33 @@ export default class Ingredient extends React.Component {
     super(props);
 
     this.id = this.props.id;
-    this.db = new Firebase('https://reactrecipes.firebaseio.com/ingredients/'+this.props.id);
+    this.db = new Firebase('https://reactrecipes.firebaseio.com/ingredients');
 
     this.state = {
       loaded: false,
-      data: []
+      data: null
     };
   }
 
   componentDidMount() {
-    this.db.once('value', (data) => {
+    this.db.on('value', (data) => {
       this.setState({
         loaded: true,
         data: data.val()
-      });
+      }, this.getElement)
     });
   }
 
+  getElement() {
+    // console.log(this.state.data[this.props.id]);
+    return this.state.data[this.props.id];
+  }
+
   render() {
-    return (
-      <strong>{this.props.id} - {this.state.data.name}</strong>
-    )
+    if(this.state.loaded) {
+      return <span>{this.state.data[this.props.id].name}</span>;
+    } else {
+      return false;
+    }
   }
 }

@@ -3,9 +3,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 
-/* Lodash */
-import _ from './_vendor/lodash.custom.min';
-
 /* Constants */
 const classNames = require('classnames');
 const app = document.getElementById('app');

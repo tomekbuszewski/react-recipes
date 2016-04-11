@@ -19,13 +19,8 @@ export default class Ingredient extends React.Component {
       this.setState({
         loaded: true,
         data: data.val()
-      }, this.getElement)
+      });
     });
-  }
-
-  getElement() {
-    // console.log(this.state.data[this.props.id]);
-    return this.state.data[this.props.id];
   }
 
   render() {
